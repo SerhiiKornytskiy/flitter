@@ -1,0 +1,26 @@
+ <ul id="twits_list">
+
+  <% @twits.each do |t| %>
+
+    <li <% if @twits.first == t %> class = "first" <%end%>>
+
+      <%= image_tag t.user.gravatar_url %>
+
+      <div class = "twit_message_container">
+
+      <%= h link_to t.user.username, user_path(t.user.username) %>	
+      <%= h t.message %>
+
+      <% if t.user_id == current_user.id %>
+      <%= link_to "Delete", t, :confirm => "You sure?", :method => :delete %>
+      <% end %>
+
+      <div class = 'time_ago'>
+      Created: <%= distance_of_time_in_words_to_now(t.created_at) %> ago
+      </div>
+      </div>
+      <div class = "clear"></div>
+    
+    </li>
+  <%end%>
+</ul>

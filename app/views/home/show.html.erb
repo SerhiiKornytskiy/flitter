@@ -1,0 +1,20 @@
+<h1> <%= image_tag @user.gravatar_url, :align => 'top' %> <%= @user.username %></h1>
+
+
+  <%= form_tag("/users/#{@user.username}/do_follow")  do |f| %>  
+
+    <div id = "submit_button_container">
+
+  	<% if current_user.is_friend? @user %>
+      <%= submit_tag  "Unfollow" , :class => "submit" %>
+    <% else %>
+      <%= submit_tag  "Follow" , :class => "submit" %>
+
+    <% end %>
+    </div> 
+
+  <div class="clear"></div>
+  <% end %>
+
+<hr>
+<%= render "twits_list", :locals => {:twits => @twits}  %>

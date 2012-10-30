@@ -1,13 +1,172 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+body {
+  background-color: #4B7399;
+  font-family: 'Lucida Grande', sans-serif;
+  font-size: 0.75em;
+  color: #333333;
+  font-weight: bold;
+}
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#container {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+}
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+/* Twit form , textarea*/
+#twit_form{
+  width: 521px;
+}
+
+#twit_form h3{
+font-size: 150%;
+margin: 0px;
+padding: 0px 0px 0px 0px;
+}
+
+#char_count{
+ float: right;
+ font-size: 20px;
+ font-color: #5B5696;
+}
+
+#twit_form h1{
+font-size: 150%;
+float: right;
+}
+
+#twit_form textarea{
+  width: 521px;
+  height: 44px;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+#twit_form #latest_message{
+  float: left;
+  color: gray;
+  padding-top: 0px;
+  font-size: 90%;
+}
+
+#twit_form #submit_button_container{
+  float: right;
+  text-align: right;
+  padding-top: 0px;
+
+}
+
+#twit_form input.submit{
+}
+
+
+/*List of twits*/
+
+#twits_list
+{ margin: 0px;
+  padding: 0px;
+  margin-top: 10px;
+  
+}
+
+#twits_list li
+{
+  list-style: none;
+  padding: 10px 0px;
+  padding-top: 10px;
+  font-weight: bold;
+  background-color: #fff;
+  border-color: gray;
+
+}
+
+#twits_list li:hover{ 
+  background-color: #F7F7F7;
+  border-color: #d2dada;
+}
+
+#twits_list img{ 
+float: left;
+padding-top: auto;
+}
+
+#twits_list div.twit_message_container{ 
+float: left;
+margin-left: 10px;
+width: 450px;
+}
+
+#twits_list div.twit_message_container a { 
+color: #2276bb;
+text-decoration: none; 
+}
+
+#twits_list div.twit_message_container div.time_ago { 
+color: #9c9c9c;
+font-size: 80%;
+
+}
+
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 0;
+}

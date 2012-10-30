@@ -10,6 +10,8 @@ gem 'nifty-generators'
 gem 'mocha'
 gem 'faker'
 gem 'populator'
+gem 'gravtastic'
+
 
 
 # Gems used only for assets and not required

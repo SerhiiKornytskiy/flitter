@@ -8,7 +8,13 @@ Flitter::Application.routes.draw do
 
   match 'login' => 'sessions#new', :as => :login
 
+  get ':users/:username', :controller => "home", :action => "show"
+
+  match '/:users/:username/do_follow', :controller => 'home', :action => "do_follow"
+
   resources :sessions
+
+  resources :twits
 
   resources :users
 
