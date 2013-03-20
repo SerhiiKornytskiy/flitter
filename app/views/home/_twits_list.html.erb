@@ -15,12 +15,41 @@
       <%= link_to "Delete", t, :confirm => "You sure?", :method => :delete %>
       <% end %>
 
+     
+
       <div class = 'time_ago'>
       Created: <%= distance_of_time_in_words_to_now(t.created_at) %> ago
+      
+      <% if t.user.username != current_user.username %>
+        <% if current_user.is_friend? t.user%>
+          
+            <input type = "button" name = "<%= t.user.username %>" value = "unfollow" class = "button ajax_button"/>
+          
+         <% else %>
+            <input type = "button" name = "<%= t.user.username %>" value = "follow" class = "button ajax_button"/>
+        <% end %>
+      <% end %>
+
       </div>
+
+      
+
       </div>
       <div class = "clear"></div>
     
     </li>
   <%end%>
 </ul>
+
+<script type="text/javascript">
+  $(function() {
+    $('.ajax_button').click(function(){
+      $.ajax({
+        type: "Get",
+        url: "/user/" + $(this).attr('name') + "/do_follow",
+         this.set('value','Unfollow');
+           })
+
+    })
+  })
+</script>

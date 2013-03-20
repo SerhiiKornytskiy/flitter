@@ -1,9 +1,10 @@
 body {
-  background-color: #4B7399;
+  background-color: #1F2224;
   font-family: 'Lucida Grande', sans-serif;
   font-size: 0.75em;
   color: #333333;
   font-weight: bold;
+  
 }
 
 a img {
@@ -20,13 +21,78 @@ a {
   overflow: hidden;
 }
 
+#header {
+  background-image: url('header.gif');
+  background-position: top;
+  background-repeat: repeat-x;
+  height: 100px;
+  padding-bottom:20px;
+
+}
+
+.footer {
+  background:#151718 url('footer.gif') repeat-x 0 bottom;
+  font-size:9px;
+  font-family:verdana, arial, sans-serif;
+  padding-bottom:15px;
+  height: 50px;
+}
+
+#main{
+  background-color: white;
+  width: 80%;
+  margin-right: 30px;
+  margin-left: 125px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  
+}
+
+#side{
+
+float: right;
+width: 30%;
+margin: 0 auto;
+margin-top: 20px;
+padding-top: 20px;
+margin-right: 20px;
+border-radius: 5px;
+word-wrap: break-word;
+background-color: #C0Deed
+
+}
+
 #container {
-  width: 75%;
+  width: 55%;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
-  border: solid 1px black;
+  border-radius: 5px;
   margin-top: 20px;
+  float: left;
+}
+
+
+
+#side .sidecontent img{
+ float: left;
+ padding-right: 10px;
+ padding-left: 20px;
+}
+
+#side .followers{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#side .follow_avs{
+ margin-left: 10px;
+}
+
+#side .search {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -46,19 +112,24 @@ a {
 
 /* Twit form , textarea*/
 #twit_form{
-  width: 521px;
+  width: 75%px;
+}
+
+#new_twit{
+width: 100%;
 }
 
 #twit_form h3{
 font-size: 150%;
 margin: 0px;
 padding: 0px 0px 0px 0px;
+width: 60%;
 }
 
 #char_count{
- float: right;
- font-size: 20px;
- font-color: #5B5696;
+ float: left;
+ font-size: 200%;
+
 }
 
 #twit_form h1{
@@ -67,7 +138,8 @@ float: right;
 }
 
 #twit_form textarea{
-  width: 521px;
+  
+  width: 495px;
   height: 44px;
   resize: none;
   margin-bottom: 20px;
@@ -78,13 +150,14 @@ float: right;
   color: gray;
   padding-top: 0px;
   font-size: 90%;
+  width: 100%;
+  word-wrap: break-word;
+
 }
 
 #twit_form #submit_button_container{
-  float: right;
-  text-align: right;
-  padding-top: 0px;
-
+  float: left;
+  margin-bottom: 15px;
 }
 
 #twit_form input.submit{
@@ -97,6 +170,7 @@ float: right;
 { margin: 0px;
   padding: 0px;
   margin-top: 10px;
+  width: 100%;
   
 }
 
@@ -108,8 +182,11 @@ float: right;
   font-weight: bold;
   background-color: #fff;
   border-color: gray;
+  word-wrap: break-word;
+
 
 }
+
 
 #twits_list li:hover{ 
   background-color: #F7F7F7;
@@ -124,7 +201,7 @@ padding-top: auto;
 #twits_list div.twit_message_container{ 
 float: left;
 margin-left: 10px;
-width: 450px;
+width: 425px;
 }
 
 #twits_list div.twit_message_container a { 
@@ -135,8 +212,15 @@ text-decoration: none;
 #twits_list div.twit_message_container div.time_ago { 
 color: #9c9c9c;
 font-size: 80%;
-
 }
+
+#twits_list div.twit_message_container .fbutton
+{
+  float: right;
+  width: 45px;
+  text-align: right;
+}
+
 
 
 .fieldWithErrors {

@@ -4,32 +4,34 @@ $('#twit_message').keyup(function(){
 var message_length = $(this).val().length;
 
 var remaining = 140 - message_length;
-$('#char_count').html(remaining);
+var mes = "Chars remain: "
+$('#char_count').html(mes + remaining);
  }) })
 </script>
 
 
-
   <%= form_for Twit.new do |t| %>  
- 
+  
   <div id="twit_form"> 
 
-  <h3><%= "What are you doing, #{current_user.username} ?" %> </h3>
-  <h3 id="char_count"><%= "140" %> </h3>
+  <h3 ><%= "What are you doing, #{current_user.username} ?" %></h3>
+  <div id="char_count"></div>
 
   <%= t.text_area :message %> 
   
   <div class="clear"></div>
-  <div id = "latest_message">
+
+  <div id ="submit_button_container">
+    <%= t.submit "Post", :class => "submit"%>
+  </div> 
+
+  <div id="latest_message">
   <%= h @last_twit %>
   </div>
-  <div class = "clear"></div>
+
+  <div class="clear"></div>
 
  
-
-  <div id = "submit_button_container">
-  <%= t.submit "Post", :class => "submit"%>
-  </div> 
   <div class="clear"></div>
   </div>
   

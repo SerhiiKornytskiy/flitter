@@ -11,6 +11,8 @@ gem 'mocha'
 gem 'faker'
 gem 'populator'
 gem 'gravtastic'
+gem "paperclip", "~> 3.0"
+
 
 
 

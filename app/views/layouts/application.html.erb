@@ -2,6 +2,8 @@
 <html>
 
   <head>
+    <div id="header"></div>
+
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
@@ -9,12 +11,29 @@
     <%= yield(:head) %>
   </head>
   <body>
+    <div id="main">
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
+
+
+      </div>
+
+   
+    <% if current_user %>
+     <%= render :partial => "/partials/side_content" %>
+    <% end %>
+  
+
+   <div class="clear"></div>
+      
+
     </div>
+  
+  <div class="footer"><div class="shell"></div></div>
+
   </body>
 </html>

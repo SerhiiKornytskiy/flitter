@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic :size => 50 
 
+
   attr_accessible :username, :email, :password, :password_confirmation
   
   has_many :twits, :dependent => :destroy
@@ -49,13 +50,21 @@ class User < ActiveRecord::Base
 
   def is_friend?(friend)
     return self.friends.include? friend
-    
   end
 
   def all_twits
     alltwits = Twit.find(:all, :conditions => ['user_id in (?)', friends.map(&:id).push(self.id)], :order => "created_at desc")
     alltwits ||= "No twits yet"
   end  
+
+  def self.search(search_query)
+    if search_query
+      where('username LIKE ?', search_query ).to_sql
+    else
+      nil
+    end
+
+  end
 
   private
 

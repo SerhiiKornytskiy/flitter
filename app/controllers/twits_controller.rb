@@ -3,13 +3,13 @@ class TwitsController < ApplicationController
 
   def create
   	twit = current_user.twits.build(params[:twit])
-  	if twit != nil
-      twit.created_at = Time.now
-      twit.save!
-      redirect_to root_path
-    else
-      redirect_to root_path
-    end
+  	  if twit.message.blank?
+        flash[:error] = "Message can't be blank!"
+      else
+        twit.created_at = Time.now
+        twit.save!
+      end
+    redirect_to root_path
   end
 
   def destroy
